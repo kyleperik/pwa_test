@@ -38,6 +38,14 @@ header .title {
     margin: 20px;
 }
 
+.content .stuff {
+    color: white;
+    display: flex;
+    justify-content: center;
+}
+
+.content .stuff div {background-color: red;width: 200px;height: 200px;display: flex;align-items: center;justify-content: center;border-radius: 50%;font-size: 25px;}
+
 .content .thing {
     margin: 5px;
 }
