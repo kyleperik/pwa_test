@@ -1,0 +1,43 @@
+body {
+    font-family: Arial;
+    margin: 0;
+}
+
+button {
+    background-color: #ff9900;
+    border: 0 solid #bf7300;
+    border-bottom-width: 4px;
+    color: white;
+    padding: 5px 10px;
+    font-size: 16px;
+    outline: none;
+    transition: background 200ms, border 100ms ease-out, margin 100ms ease-out;
+}
+
+button[disabled] {
+    background-color: #a5a5a5;
+    border-color: #7b7b7b;
+}
+
+button:active {
+    margin-top: 4px;
+    border-bottom-width: 0;
+}
+
+header {
+    background-color: #ff9900;
+    color: white;
+}
+
+header .title {
+    font-size: 20px;
+    padding: 10px;
+}
+
+.content {
+    margin: 20px;
+}
+
+.content .thing {
+    margin: 5px;
+}
