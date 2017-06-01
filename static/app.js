@@ -1,4 +1,4 @@
-var pushButton, pushNotificationButton;
+var pushButton;
 var swRegistration;
 
 var subscriptions = [];
@@ -74,10 +74,6 @@ function subscribeUser() {
 }
 
 function initialiseUI() {
-    pushNotificationButton.addEventListener('click', function () {
-      fetch('/push').then(r => r.text()).then(r => console.log('[server] ' + r));
-    })
-  
     pushButton.addEventListener('click', function() {
         pushButton.disabled = true;
         if (isSubscribed) {
@@ -123,7 +119,6 @@ function updateBtn() {
 
 window.addEventListener('load', function () {
     pushButton = document.querySelector('#PushButton');
-    pushNotificationButton = document.querySelector('#PushNotification');
     applicationServerPublicKey = 'BFcqYfeUHMJI6qvRn0klkev-9L6uHuEP2HwvF6SsNvkm1Y9Vb_U0m7eNjMgrYWXvHe5P1ZKaifDHW3fAdsn22Lg';
 
     if ('serviceWorker' in navigator && 'PushManager' in window) {
