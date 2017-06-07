@@ -5,16 +5,6 @@ var subscriptions = [];
 
 function updateSubscriptionOnServer (subscription) {
     console.log(subscription);
-    if (subscription)
-      fetch('/subscription', {
-        method: 'POST', 
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(subscription.toJSON())
-      })
-      .then(r => r.text())
-      .then(r => console.log('[server] ' + r));
 }
 
 function urlB64ToUint8Array(base64String) {
@@ -74,6 +64,13 @@ function subscribeUser() {
 }
 
 function initialiseUI() {
+    document.querySelector('#PushNotification').addEventListener('click', function() {
+        swRegistration.showNotification('test', {
+          body: 'Yay it works.',
+          icon: 'SNice.svg.png',
+          badge: 'SNice.svg.png'
+        });
+    });
     pushButton.addEventListener('click', function() {
         pushButton.disabled = true;
         if (isSubscribed) {
